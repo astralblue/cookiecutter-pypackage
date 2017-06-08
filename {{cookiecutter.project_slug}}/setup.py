@@ -15,7 +15,7 @@ requirements = [
     {%- if cookiecutter.command_line_interface|lower == 'click' %}
     'Click>=6.0',
     {%- endif %}
-    # TODO: put package requirements here
+    # TODO({{ cookiecutter.github_username }}): put package requirements here
 ]
 
 setup_requirements = [
@@ -29,7 +29,7 @@ test_requirements = [
 {%- if cookiecutter.use_pytest == 'y' %}
     'pytest',
 {%- endif %}
-    # TODO: put package test requirements here
+    # TODO({{ cookiecutter.github_username }}): put package test requirements here
 ]
 
 {%- set license_classifiers = {
