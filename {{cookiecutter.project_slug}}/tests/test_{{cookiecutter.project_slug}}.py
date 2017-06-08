@@ -3,20 +3,29 @@
 
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
+{%- import 'import_helper.rst' as import -%}
+
+{%- with standard = {}, third_party = {}, ours = {} -%}
+
 {% if cookiecutter.use_pytest == 'y' -%}
-import pytest
+{{- import.module(third_party, 'pytest') -}}
 {% else %}
-import unittest
+{{- import.module(standard, 'unittest') -}}
 {%- endif %}
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
-from click.testing import CliRunner
+{{- import.symbol(third_party, 'click.testing', 'CliRunner') }}
 {%- endif %}
 
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+{{- import.submodule(ours, cookiecutter.project_slug, cookiecutter.project_slug) -}}
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
-from {{ cookiecutter.project_slug }} import cli
+{{- import.submodule(ours, cookiecutter.project_slug, 'cli') }}
 {%- endif %}
 
+{{- import.emit(standard) }}
+{{- import.emit(third_party) }}
+{{- import.emit(ours) }}
+
+{%- endwith %}
 {%- if cookiecutter.use_pytest == 'y' %}
 
 
