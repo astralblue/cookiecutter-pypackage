@@ -22,3 +22,6 @@ if __name__ == '__main__':
 
     if 'Not open source' == '{{ cookiecutter.open_source_license }}':
         remove_file('LICENSE')
+
+    if 'CCPY_IMPORT_HELPER_TEST' not in os.environ:
+        remove_file('import_helper.rst')
