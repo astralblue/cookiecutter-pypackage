@@ -42,6 +42,18 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
         rmtree(str(result.project))
 
 
+def run_inside_dir(command, dirpath):
+    """
+    Run a command from inside a given directory.
+
+    :param command: Command that will be executed
+    :param dirpath: String, path of the directory the command is being run.
+    :return: the exit status
+    """
+    with inside_dir(dirpath):
+        return subprocess.call(shlex.split(command))
+
+
 def check_inside_dir(command, dirpath):
     """
     Run a command from inside a given directory and ensure it exits cleanly.
