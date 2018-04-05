@@ -17,9 +17,12 @@ email
 github_username
     Your GitHub username.
 
+github_owner
+    The owner of the GitHub repository.  Change this if the repository should be owned by someone else or an organization.
+
 project_name
     The name of your new Python package project. This is used in documentation, so spaces and any characters are fine here.
-    
+
 project_slug
     The namespace of your Python package. This should be Python import-friendly. Typically, it is the slugified version of project_name.
 
