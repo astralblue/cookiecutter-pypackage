@@ -1,5 +1,4 @@
 # Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
 python:
@@ -7,19 +6,20 @@ python:
   - 3.5
   - 3.4
   - 2.7
-  - 2.6
   - pypy3
   - pypy
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
 
-# command to run tests, e.g. python setup.py test
+# Command to run tests, e.g. python setup.py test
 script: tox
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
+# Assuming you have installed the travis-ci CLI tool, after you
+# create the Github repo and add it to Travis, run the
+# following command to finish PyPI deployment setup:
+# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
@@ -29,5 +29,5 @@ deploy:
   on:
     tags: true
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    python: 2.7
+    python: 3.6
 {%- endif %}

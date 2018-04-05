@@ -1,5 +1,6 @@
-language: python
+# Config file for automatic testing at travis-ci.org
 
+language: python
 python:
   - 3.6
   - 3.5
@@ -8,15 +9,16 @@ python:
   - pypy3
   - pypy
 
-install:
-  - pip install -U tox-travis
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install: pip install -U tox-travis
 
-script:
-  - tox
+# command to run tests, e.g. python setup.py test
+script: tox
 
+# deploy new versions to PyPI
 deploy:
   provider: pypi
-  distributions: sdist
+  distributions: sdist bdist_wheel
   user: audreyr
   password:
     secure: PLEASE_REPLACE_ME
