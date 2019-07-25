@@ -1,0 +1,6 @@
+schedule: "every month"
+pr_prefix: "[pyup.io]"
+
+requirements:
+  - "requirements_dev.txt": {}
+  - "{{cookiecutter.project_slug}}/requirements_dev.txt": {}
