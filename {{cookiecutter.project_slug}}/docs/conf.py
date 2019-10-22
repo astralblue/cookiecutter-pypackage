@@ -13,10 +13,9 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-# If extensions (or modules to document with autodoc) are in another
-# directory, add these directories to sys.path here. If the directory is
-# relative to the documentation root, use os.path.abspath to make it
-# absolute, like shown here.
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 import sys
@@ -24,15 +23,17 @@ sys.path.insert(0, os.path.abspath('..'))
 
 import {{ cookiecutter.project_slug }}
 
-# -- General configuration ---------------------------------------------
+# -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
 # needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = ['sphinx.ext.autodoc',
+    'sphinx.ext.viewcode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,9 +52,9 @@ project = u'{{ cookiecutter.project_name }}'
 copyright = u"{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 author = u"{{ cookiecutter.full_name }}"
 
-# The version info for the project you're documenting, acts as replacement
-# for |version| and |release|, also used in various other places throughout
-# the built documents.
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
 #
 # The short X.Y version.
 version = {{ cookiecutter.project_slug }}.__version__
@@ -79,15 +80,15 @@ pygments_style = 'sphinx'
 todo_include_todos = False
 
 
-# -- Options for HTML output -------------------------------------------
+# -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
 
-# Theme options are theme-specific and customize the look and feel of a
-# theme further.  For a list of options available for each theme, see the
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
 # documentation.
 #
 # html_theme_options = {}
@@ -98,13 +99,13 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 
-# -- Options for HTMLHelp output ---------------------------------------
+# -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = '{{ cookiecutter.project_slug }}doc'
 
 
-# -- Options for LaTeX output ------------------------------------------
+# -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
@@ -125,8 +126,10 @@ latex_elements = {
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass
-# [howto, manual, or own class]).
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+#
+# TODO(astralblue): Use sphinx.util.texescape to escape title and author.
 latex_documents = [
     (master_doc, '{{ cookiecutter.project_slug }}.tex',
      u'{{ cookiecutter.project_name }} Documentation',
@@ -134,7 +137,7 @@ latex_documents = [
 ]
 
 
-# -- Options for manual page output ------------------------------------
+# -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
@@ -145,7 +148,7 @@ man_pages = [
 ]
 
 
-# -- Options for Texinfo output ----------------------------------------
+# -- Options for Texinfo output -------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
