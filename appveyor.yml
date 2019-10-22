@@ -9,12 +9,6 @@ environment:
     - PYTHON: "C:\\Python27-x64"
       TOX_ENV: "py27"
 
-    - PYTHON: "C:\\Python34"
-      TOX_ENV: "py34"
-
-    - PYTHON: "C:\\Python34-x64"
-      TOX_ENV: "py34"
-
     - PYTHON: "C:\\Python35"
       TOX_ENV: "py35"
 
@@ -26,7 +20,6 @@ environment:
 
     - PYTHON: "C:\\Python36-x64"
       TOX_ENV: "py36"
-
 
     - PYTHON: "C:\\Python37"
       TOX_ENV: "py37"
@@ -42,7 +35,7 @@ init:
 
 install:
   - "%PYTHON%/Scripts/easy_install -U pip"
-  - "%PYTHON%/Scripts/pip install tox"
+  - "%PYTHON%/Scripts/pip install -U tox virtualenv"
   - "%PYTHON%/Scripts/pip install wheel"
 
 build: false  # Not a C# project, build stuff at the test step instead.

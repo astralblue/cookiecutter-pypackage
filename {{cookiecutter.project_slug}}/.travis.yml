@@ -5,7 +5,6 @@ python:
   - 3.7
   - 3.6
   - 3.5
-  - 3.4
   - 2.7
   - pypy3
   - pypy
@@ -30,5 +29,5 @@ deploy:
   on:
     tags: true
     repo: {{ cookiecutter.github_owner }}/{{ cookiecutter.project_slug }}
-    python: 3.6
+    python: 3.7
 {%- endif %}
