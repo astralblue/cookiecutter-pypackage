@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # {{ cookiecutter.project_slug }} documentation build configuration file, created by
@@ -17,11 +17,10 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
-import {{ cookiecutter.project_slug }}
 
 # -- General configuration ------------------------------------------------
 
@@ -128,12 +127,9 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-#
-# TODO(astralblue): Use sphinx.util.texescape to escape title and author.
 latex_documents = [
-    (master_doc, '{{ cookiecutter.project_slug }}.tex',
-     u'{{ cookiecutter.project_name }} Documentation',
-     u'{{ cookiecutter.full_name }}', 'manual'),
+    (master_doc, '{{ cookiecutter.project_slug }}.tex', '{{ cookiecutter.project_name }} Documentation',
+     '{{ cookiecutter.full_name }}', 'manual'),
 ]
 
 
@@ -142,8 +138,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{{ cookiecutter.project_slug }}',
-     u'{{ cookiecutter.project_name }} Documentation',
+    (master_doc, '{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_name }} Documentation',
      [author], 1)
 ]
 
@@ -154,11 +149,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, '{{ cookiecutter.project_slug }}',
-     u'{{ cookiecutter.project_name }} Documentation',
-     author,
-     '{{ cookiecutter.project_slug }}',
-     'One line description of project.',
+    (master_doc, '{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_name }} Documentation',
+     author, '{{ cookiecutter.project_slug }}', 'One line description of project.',
      'Miscellaneous'),
 ]
 
