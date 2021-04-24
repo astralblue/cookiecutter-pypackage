@@ -4,3 +4,4 @@ cookiecutter>=1.4.0
 pytest-cookies==0.5.1
 alabaster==0.7.12
 watchdog==2.0.3
+PyYAML==5.4.1
