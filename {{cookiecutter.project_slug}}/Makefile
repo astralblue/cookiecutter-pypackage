@@ -1,4 +1,5 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: clean clean-build clean-pyc clean-test coverage dist docs help install lint lint/flake8
+
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -47,8 +48,11 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
-lint: ## check style with flake8
+lint/flake8: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
+
+
+lint: lint/flake8 ## check style
 
 test: ## run tests quickly with the default Python
 {%- if cookiecutter.use_pytest == 'y' %}
