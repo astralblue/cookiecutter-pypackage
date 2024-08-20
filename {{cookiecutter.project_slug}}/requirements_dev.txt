@@ -6,7 +6,7 @@ flake8==3.9.1
 flake8-docstrings==1.6.0
 tox==3.23.0
 coverage==5.5
-Sphinx==7.2.6
+Sphinx==8.0.2
 twine==5.0.0
 ruff==0.3.5
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
